@@ -59,7 +59,7 @@ class Pair
 	{
 		$connObj = new SqlConn();
         $conn= $connObj->sql_connection();
-		$sql1="select P_Id from pair where Mentor='$Mentor' and Mentee='$Mentee'";
+		$sql1="select P_Id from pairs where Mentor='$Mentor' and Mentee='$Mentee'";
 		$result = mysqli_query($conn, $sql);
 		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row['P_Id'];
