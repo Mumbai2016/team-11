@@ -76,7 +76,7 @@ class Pair
 		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row['count'];
 	}
-	function getpairswith($count)
+	function getpairswithcount($count)
 	{
 		$connObj = new SqlConn();
         $conn= $connObj->sql_connection();
@@ -105,6 +105,15 @@ class Meeting
 		$result = mysqli_query($conn, $sql1);
         $row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
         return $row;
+	}
+	function getmeetingswithpair($pid)
+	{
+		$sql1="select * from meeting where P_Id='$pid'";
+		$connObj = new SqlConn();
+        $conn= $connObj->sql_connection();
+		$result = mysqli_query($conn, $sql1);
+        
+        return $result;
 	}
 }
 class Request
