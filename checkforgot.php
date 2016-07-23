@@ -33,19 +33,14 @@
         'username' => $crendentials['email'],
         'password' => $crendentials['password'],
         'secure' => 'tls' //SSL or TLS
-
         );
-
         /* TO, SUBJECT, CONTENT */
         $to         = $row['email']; //The 'To' field
         $subject    = 'Forgot Password Request for Katalyst';
         //$content    = "Hello, ".$row['name']."<br>Your password is: <strong>".$row['password']."</strong><br><br>Regards,<br>Coding Website Team.";
         $content    = "Hello, ".$username."<br>This is a reminder for your mentor session through katalyst<br><br>Regards,<br>Katalyst team";
         //$SESSION['username']=$row['username'];
-
-
         $mailer = new PHPMailer();
-
         //SMTP Configuration
         $mailer->isSMTP();
         $mailer->SMTPAuth   = true; //We need to authenticate
@@ -56,7 +51,7 @@
         $mailer->SMTPSecure = $smtp['secure']; 
 
         //Now, send mail :
-        //From - To :
+        //From - To ://pratik
         $mailer->From       = $crendentials['email'];
         $mailer->FromName   = 'Katalyst'; //Optional
         $mailer->addAddress($to);  // Add a recipient
@@ -65,7 +60,6 @@
         $mailer->Subject        = $subject;
         $mailer->Body           = $content;
         $mailer->isHTML(true); //Mail body contains HTML tags
-
         //Check if mail is sent :
         if(!$mailer->send()) {
             echo 'Error sending mail : ' . $mailer->ErrorInfo;
@@ -73,7 +67,6 @@
             echo "<script>alert('Message sent! Check your email!');</script>";
         }
     }  
-
     else
     {
         echo "<script>alert('User does not exist');</script>";
