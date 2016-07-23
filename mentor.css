@@ -1,3 +1,8 @@
+h3{
+
+    text-align: left;
+}
+
 p{
 	color:orangered;
 	font-family:Verdana;
@@ -23,6 +28,13 @@ padding-top:1px;
 line-height:20px;
 margin:0px 0px 0px 0px;
 }
+
+#footer {
+  position: relative;
+  margin-top: 360px; /* negative value of footer height */
+  height: 180px;
+  clear:both;
+} 
 
 
 #header ul#enter {
