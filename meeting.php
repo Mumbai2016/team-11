@@ -6,7 +6,6 @@
 		
 		//header ("Location: login.php");
 	}
-	
 ?>
 <!DOCTYPE html>
 <head>
@@ -49,58 +48,14 @@ Katalyst
 
 
 <div class="row">
-  <?php
-  	if(isset($_GET))
-	  {
-		  $count=$_GET['count'];
-	  } 
- 
-include ('query.php');
-$user=new User();
-$pair=new Pair();
-
-$result=$pair->getpairswithcount($count);
-
-	if ($result->num_rows > 0)
-	 {
-		echo "<div class='row'>"; 
-	    // output data of each row
-			echo "<div class='panel panel-default'>";
-			echo "<div class='panel-body'>";
-			echo "<center>";
-			echo "<h2>Mentor &nbsp; &nbsp; Mentee</h2>";
-			echo "</center>";
-			echo "</div>";
-			echo "</div>";
-			
-	    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
-	    {
-			
-						
-			echo "<div class='panel panel-default'>";
-			echo "<div class='panel-body'>";
-			echo "<p>";
-			echo "<center>";
-			echo "<a href='meetings.php?pid=".$row['P_Id']."'>".$user->getMentee($row['Mentor'])."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$user->getMentee($row['Mentee'])."</a>&nbsp;&nbsp;&nbsp;<button type='button'' class='btn btn-default' >Send Reminder</button>;";
-			echo "</center>";
-			echo "</p>";
-			echo "</div>";
-			echo "</div>";
-
-	    }
-		echo "</div>";
-	    $result->close();	
-		  
-	 }
-	else
-	{
-		echo "NO RESULTS FOUND :("; 
-		echo "CHECK SOMETHING ELSE.. !";
-	}
-
-?>
+  <?php include 'mentor-mentee-content.php' ?>
 </div>
 
+
+
+
+
+<div id="end">
 <p>
 				© Katalyst 2016. All Rights Reserved.<br>
 	
