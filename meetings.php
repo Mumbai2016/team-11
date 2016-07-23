@@ -56,10 +56,9 @@ Katalyst
 	  } 
  
 include ('query.php');
-$user=new User();
-$pair=new Pair();
+$meeting=new Meeting()
 
-$result=$pair->getpairswithcount($count);
+$result=$meeting->getmeetingswithpair($count);
 
 	if ($result->num_rows > 0)
 	 {
@@ -81,7 +80,7 @@ $result=$pair->getpairswithcount($count);
 			echo "<div class='panel-body'>";
 			echo "<p>";
 			echo "<center>";
-			echo "<a href='meetings.php?pid=".$row['P_Id']."'>".$user->getMentee($row['Mentor'])."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$user->getMentee($row['Mentee'])."</a>&nbsp;&nbsp;&nbsp;<button type='button'' class='btn btn-default'>Send Reminder</button>;";
+            echo $row['Time']
 			echo "</center>";
 			echo "</p>";
 			echo "</div>";
@@ -101,6 +100,11 @@ $result=$pair->getpairswithcount($count);
 ?>
 </div>
 
+
+
+
+
+<div id="end">
 <p>
 				© Katalyst 2016. All Rights Reserved.<br>
 	
