@@ -249,6 +249,10 @@ html,body {
     width: 100%;
 }
 
+.h4 {
+    color:red;
+}
+
 .cell {
     float: left;
     height: 100%;
@@ -270,7 +274,7 @@ html,body {
 .clickable1 {
     cursor: pointer;
     color:#ff0000;
-    
+
 }
 
 .row.week .cell {
