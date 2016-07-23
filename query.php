@@ -6,10 +6,10 @@ class SqlConn
             
         $serverName = "localhost";
         $userName   = "root";
-        $password   = " ";
+        $password   = "rvdp9book";
         $dbName     = "katalyst11";
         // Create connection
-        $conn       = mysqli_connect("localhost", $userName, "", $dbName);
+        $conn       = mysqli_connect("localhost", $userName, "rvdp9book", $dbName);
         
         // Check connection
         if (!$conn) {

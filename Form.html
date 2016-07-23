@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.center {
+overflow:hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48%;
+  height: 53%;
+}
+</style>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div class="center">
+<div data-role="page">
+  <div data-role="main" class="ui-content">
+    <form method="post" action="demoform.asp">
+      <label for="fname"><center>Request Meeting Form<center></label>
+      <input type="date" id="date" placeholder="Enter the date">
+      <input type="text" placeholder="Time">
+      <input type="text" placeholder="Location">
+      <input type="text" placeholder="Goals">
+    </form>
+	<center>
+<button type="submit">Submit</button>
+<button type="submit">Reset</button>
+<center>
+  </div>
+</div>
+
+<!-- -->
+</div>
+</body>
+</html>
