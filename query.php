@@ -3,7 +3,7 @@ class SqlConn
 {
     function sql_connection()
     {
-            
+        //pratik
         $serverName = "localhost";
         $userName   = "root";
         $password   = " ";
