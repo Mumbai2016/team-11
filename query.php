@@ -76,6 +76,18 @@ class Pair
 		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row['count'];
 	}
+	function getpairswith($count)
+	{
+		$connObj = new SqlConn();
+        $conn= $connObj->sql_connection();
+		if($count<3)
+			$sql="select * from pairs where m_count='$count'";
+		else
+			$sql="select * from pairs where m_count>2";
+		$result = mysqli_query($conn, $sql);
+		
+		return $result;
+	}
 }
 class Meeting
 {
