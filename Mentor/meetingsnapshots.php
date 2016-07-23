@@ -48,7 +48,7 @@ Katalyst
 
 
 <div class="row">
-  <?php include 'calendar.php' ?>
+  <?php include 'display.php' ?>
 </div>
 
 

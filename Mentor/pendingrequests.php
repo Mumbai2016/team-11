@@ -35,7 +35,7 @@ Katalyst
 
 <div id="trial">
 <ul>
-  <li><a href="#">Upcoming Meetings</a></li>
+  <li><a href="mentor.php">Upcoming Meetings</a></li>
   <li><a href="pendingrequests.php">Pending Requests</a></li>
   <li><a href="meetingsnapshots.php">Meeting Snapshots</a></li>
 </ul>
@@ -48,7 +48,7 @@ Katalyst
 
 
 <div class="row">
-  <?php include 'calendar.php' ?>
+  <?php include 'panel.php' ?>
 </div>
 
 
