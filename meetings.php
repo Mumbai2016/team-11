@@ -52,13 +52,13 @@ Katalyst
   <?php
   	if(isset($_GET))
 	  {
-		  $count=$_GET['count'];
+		  $pid=$_GET['pid'];
 	  } 
  
 include ('query.php');
-$meeting=new Meeting()
+$meeting=new Meeting();
 
-$result=$meeting->getmeetingswithpair($count);
+$result=$meeting->getmeetingswithpair($pid);
 
 	if ($result->num_rows > 0)
 	 {
@@ -80,12 +80,16 @@ $result=$meeting->getmeetingswithpair($count);
 			echo "<div class='panel-body'>";
 			echo "<p>";
 			echo "<center>";
-            echo $row['Time']
+            
+            echo "<table>";
+			echo "<tr><th>Date</th><th>Time</th><th>Location</th></tr>";
+            
+            echo "<a href='meetings.php?pid=".$row['P_Id']."''>".$row['Date']."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$row['Time']."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$row['location']."</a>&nbsp;&nbsp;&nbsp;";
 			echo "</center>";
 			echo "</p>";
 			echo "</div>";
 			echo "</div>";
-
+			echo "<br><br><br><br><br><br>";
 	    }
 		echo "</div>";
 	    $result->close();	
