@@ -6,10 +6,10 @@ class SqlConn
             
         $serverName = "localhost";
         $userName   = "root";
-        $password   = "rvdp9book";
+        $password   = "";
         $dbName     = "katalyst11";
         // Create connection
-        $conn       = mysqli_connect("localhost", $userName, "rvdp9book", $dbName);
+        $conn       = mysqli_connect("localhost", $userName, "", $dbName);
         
         // Check connection
         if (!$conn) {
@@ -50,18 +50,7 @@ class User
 		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row['U_Id'];
 	}
-	function getmenteewithoutmentor()
-	{
-		$connObj = new SqlConn();
-        $conn= $connObj->sql_connection();
-		if($count<3)
-			$sql="select * from pairs where m_count='$count'";
-		else
-			$sql="select * from pairs where m_count>2";
-		$result = mysqli_query($conn, $sql);
-		
-		return $result;
-	}
+	
 }
 class Pair
 {
@@ -99,6 +88,15 @@ class Pair
 		$result = mysqli_query($conn, $sql);
 		
 		return $result;
+	}
+	function getmentormentee($pid)
+	{
+		$connObj = new SqlConn();
+        $conn= $connObj->sql_connection();
+		$sql1="select * from pairs where P_Id=$pid";
+		$result = mysqli_query($conn, $sql1);
+		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		return $row;
 	}
 	
 	

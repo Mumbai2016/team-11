@@ -68,7 +68,7 @@ $result=$pair->getpairswithcount($count);
 			echo "<div class='panel panel-default'>";
 			echo "<div class='panel-body'>";
 			echo "<center>";
-			echo "<h2>Mentor &nbsp; &nbsp; Mentee</h2>";
+			s
 			echo "</center>";
 			echo "</div>";
 			echo "</div>";
@@ -80,7 +80,13 @@ $result=$pair->getpairswithcount($count);
 			echo "<div class='panel panel-default'>";
 			echo "<div class='panel-body'>";
 			echo "<p>";
+			$pairs= new Pair()
+			$user= new User()	
+			$mentor=($pairs->getmentormentee($row['P_Id']))['Mentor'];
+			$mentee=($pairs->getmentormentee($row['P_Id']))['Mentee'];
+			
 			echo "<center>";
+			echo "Mentor: ".$mentor." Mentee: ".$mentee."<br>";
 			echo "<a href='meetings.php?pid=".$row['P_Id']."'>".$user->getMentee($row['Mentor'])."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$user->getMentee($row['Mentee'])."</a>&nbsp;&nbsp;&nbsp;<button type='button'' class='btn btn-default' >Send Reminder</button>;";
 			echo "</center>";
 			echo "</p>";

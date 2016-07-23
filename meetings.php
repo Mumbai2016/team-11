@@ -67,10 +67,11 @@ $result=$meeting->getmeetingswithpair($pid);
 			echo "<div class='panel panel-default'>";
 			echo "<div class='panel-body'>";
 			echo "<center>";
-			echo "<h2>Mentor &nbsp; &nbsp; Mentee</h2>";
+			echo "<h2>Your Meetings</h2>";
 			echo "</center>";
 			echo "</div>";
 			echo "</div>";
+			
 			
 	    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 	    {
@@ -80,18 +81,18 @@ $result=$meeting->getmeetingswithpair($pid);
 			echo "<div class='panel-body'>";
 			echo "<p>";
 			echo "<center>";
-            
-            echo "<table>";
-			echo "<tr><th>Date</th><th>Time</th><th>Location</th></tr>";
-            
-            echo "<a href='meetings.php?pid=".$row['P_Id']."''>".$row['Date']."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$row['Time']."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$row['location']."</a>&nbsp;&nbsp;&nbsp;";
+        
+            $pairs=new Pair();
+			$user=new User();
+            echo "<a href='meetingdetails.php?mid=".$row['M_Id']."''>Mentor: ".$user->getmentee($pairs->getmentormentee($row['P_Id'])['Mentor'])." Mentee: ".$user->getmentee($pairs->getmentormentee($row['P_Id'])['Mentee'])."</br> ".$row['Date']."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$row['Time']."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$row['location']."</a>&nbsp;&nbsp;&nbsp;";
 			echo "</center>";
 			echo "</p>";
 			echo "</div>";
 			echo "</div>";
 			echo "<br><br><br><br><br><br>";
 	    }
-		echo "</div>";
+		echo "</ul></div>";
+	
 	    $result->close();	
 		  
 	 }
