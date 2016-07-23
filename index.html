@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fractal Analytics Document Portal</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/animate.min.css" rel="stylesheet"> 
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link id="css-preset" href="css/presets/preset1.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <script>
+	
+	var doc1="no";
+	var doc2="no";
+	var doc3="no";
+	var doc4="no";
+	var doc5="no";
+	var ssdoc1=0;
+	var ssdoc2=0;
+	var ssdoc3=0;
+	var ssdoc4=0;
+	var ssdoc5=0;	
+	function valid ()
+	{
+		var result1=true;			
+		filecheck_D1 = $('#file_input_D1').val();
+		filecheck_D2 = $('#file_input_D2').val();
+		filecheck_D3 = $('#file_input_D3').val();
+		filecheck_D4 = $('#file_input_D4').val();
+		filecheck_D5 = $('#file_input_D5').val();
+		code=document.form1.CODE.value;
+		if (code == "" || code == null)
+		{
+			alert("Employee code is a required field");
+			result1=false;
+		}
+		else if(doc1 == "yes")
+		{
+			alert("Enter yes or no for DOCUMENT 1");
+			result1=false;	
+		}
+		else if(doc2 == ""||doc2 == null)
+		{
+			alert("Enter yes or no for DOCUMENT 2");
+			result1=false;	
+		}
+		else if(doc3 == ""||doc3 == null)
+		{
+			alert("Enter yes or no for DOCUMENT 3");
+			result1=false;	
+		}
+		else if(doc4 == ""||doc4 == null)
+		{
+			alert("Enter yes or no for DOCUMENT 4");
+			result1=false;	
+		}
+		else if(doc5 == ""||doc5 == null)
+		{
+			alert("Enter yes or no for DOCUMENT 5");
+			result1=false;	
+		}
+		else if(doc1 == "yes" && filecheck_D1=='')
+		{
+		        alert("Empty file selected OR No file selected for DOCUMENT 1"); 
+		        result1=false;
+		}
+		else if(doc2 == "yes" && filecheck_D2=='')
+		{
+		        alert("Empty file selected OR No file selected for DOCUMENT 2"); 
+		        result1=false;
+		}
+		else if(doc3 == "yes" && filecheck_D3=='')
+		{
+		        alert("Empty file selected OR No file selected for DOCUMENT 3"); 
+		        result1=false;
+		}
+		else if(doc4 == "yes" && filecheck_D4=='')
+		{
+		        alert("Empty file selected OR No file selected for DOCUMENT 4"); 
+		        result1=false;
+		}
+		else if(doc5 == "yes" && filecheck_D5=='')
+		{
+		        alert("Empty file selected OR No file selected for DOCUMENT 5"); 
+		        result1=false;
+		}
+		return result1;			
+	}
+		
+		
+	function sdoc1()
+	{
+		if(ssdoc1==0)
+		{
+			ssdoc1=1;
+			document.getElementById('DOC1').style.display = "block";
+			doc1="yes";
+		}
+		else
+		{
+			ssdoc1=0;
+			document.getElementById('DOC1').style.display = "none";
+			doc1="no";
+		}
+	}
+
+	function sdoc2()
+	{
+		if(ssdoc2==0)
+		{
+			ssdoc2=1;
+			document.getElementById('DOC2').style.display = "block";
+			doc2="yes";
+		}
+		else
+		{
+			ssdoc2=0;
+			document.getElementById('DOC2').style.display = "none";
+			doc2="no";
+		}
+	}
+
+	function sdoc3()
+	{
+		if(ssdoc3==0)
+		{
+			ssdoc3=1;
+			document.getElementById('DOC3').style.display = "block";
+			doc3="yes";
+		}
+		else
+		{
+			ssdoc3=0;
+			document.getElementById('DOC3').style.display = "none";
+			doc3="no";
+		}
+	}
+
+	function sdoc4()
+	{
+		if(ssdoc4==0)
+		{
+			ssdoc4=1;
+			document.getElementById('DOC4').style.display = "block";
+			doc4="yes";
+		}
+		else
+		{
+			ssdoc4=0;
+			document.getElementById('DOC4').style.display = "none";
+			doc4="no";
+		}
+	}
+
+	function sdoc5()
+	{
+		if(ssdoc5==0)
+		{
+			ssdoc5=1;
+			document.getElementById('DOC5').style.display = "block";
+			doc5="yes";
+		}
+		else
+		{
+			ssdoc5=0;
+			document.getElementById('DOC5').style.display = "none";
+			doc5="no";
+		}
+	}
+		
+	</script>
+</head><!--/head-->
+
+<body>
+
+  <!--.preloader-->
+  <div class="preloader"> <i class="fa fa-circle-o-notch fa-spin"></i></div>
+  <!--/.preloader-->
+
+  <header id="home">
+    <div id="home-slider" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="item active" style="background-image: url(images/slider/1.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Welcome to <br><span>FRACTAL ANALYTICS</span></h1>
+            <p class="animated fadeInRightBig">Insight, Impact, Innovation</p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#instructions">Start now</a>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(images/slider/2.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">Say Hello to <br><span>Fractal Analytics</span></h1>
+            <p class="animated fadeInRightBig">Enter into a new world of Innovation</p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#instructions">Start now</a>
+          </div>
+        </div>
+        <div class="item" style="background-image: url(images/slider/3.jpg)">
+          <div class="caption">
+            <h1 class="animated fadeInLeftBig">We are <span>Creative</span></h1>
+            <p class="animated fadeInRightBig">We bring your dreams to reality</p>
+            <a data-scroll class="btn btn-start animated fadeInUpBig" href="#instructions">Start now</a>
+          </div>
+        </div>
+      </div>
+      <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+      <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
+      <a id="tohash" href="#instructions"><i class="fa fa-angle-down"></i></a>
+
+    </div><!--/#home-slider-->
+    <div class="main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <h1><img class="img-responsive" src="images/logo.png" alt="logo"></h1>
+          </a>                    
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">                 
+            <li class="scroll active"><a href="#home">Home</a></li>
+            <li class="scroll"><a href="#instructions">Instructions</a></li> 
+            <li class="scroll"><a href="#upload">Upload</a></li>                     
+          </ul>
+        </div>
+      </div>
+    </div><!--/#main-nav-->
+  </header><!--/#home-->
+
+
+  <section id="instructions">
+    <div class="container">
+      <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+        <div class="row">
+          <div class="text-center col-sm-8 col-sm-offset-2">
+            <h2>Instructions for Employees/Admin</h2>
+            <p align="justify">To complete the procedure of visa application, the employee/admin needs to upload the following 5 documents :</p>
+	    <p align="justify">1. DOCUMENT 1</p>
+	    <p align="justify">2. DOCUMENT 2</p>
+	    <p align="justify">3. DOCUMENT 3</p>
+	    <p align="justify">4. DOCUMENT 4</p>
+	    <p align="justify">5. DOCUMENT 5</p>
+	    <p align="justify">All the five documents should be uploaded for the visa application to be complete ant it to be accepted. Adding of fake documents will lead to backlisting of applicant.</p>
+	    <p align="justify">Important points to be noted.</p>
+	    <p align="justify">1. The documents must be in odt, ott, fodt, uot, docx, xml, doc, dot, html, rtf, txt or pdf format only.</p>
+	    <p align="justify">2. The size of each document should not exceed 1MB</p>
+	    <p align="justify">3. Don't click back or refresh button while processing.</p>
+	    <p align="justify">4. You cannot change the documents after you submit.</p>
+	    <p align="justify">5. The documents are valid by law.</p>
+	  </div>
+        </div> 
+      </div>
+     </div>
+  </section><!--/#instructions-->
+
+
+  <section id="upload" class="parallax">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="about-info wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+            	
+            	<!-- Register -->
+		<div class="container jumbotron" style="margin-top: 20px;">
+			<h2>Upload Documents</h2>
+				<form name="form1" class="form-horizontal" enctype="multipart/form-data" method="post" onsubmit="return valid()" action="backend.php">
+					<div class="form-group">
+			    			<label class="col-sm-2 col-md-2 col-md-offset-1 control-label">Employee code of the Employee<br></label>
+			    				<div class="col-sm-8 col-md-6">
+			      					<input name="CODE" type="text" class="form-control" id="code" placeholder="Employee Code of Employee">
+			    				</div>
+		  			</div>		
+			
+					<div class="form-group">
+						<div class="table-responsive col-md-8 col-md-offset-2">
+				  			<table class="table table-bordered table-hover ">
+				    			<tr>
+				    				<td><b>DOCUMENT NAME</b></td>
+				    				<td><b>SELECTED</b></td>
+				    			</tr>
+				    			<tr>
+				    				<td>DOCUMENT 1</td>
+				    				<td><input type="checkbox" name="DOC_1" id="doc_1" value="yes" onchange="sdoc1()"></td>
+				    		
+				    			</tr>
+				    			<tr>
+				    				<td>DOCUMENT 2</td>
+				    				<td><input type="checkbox" name="DOC_2" id="doc_2" value="yes" onchange="sdoc2()"></td>
+				    		
+				    			</tr>
+							<tr>
+				    				<td>DOCUMENT 3</td>
+				    				<td><input type="checkbox" name="DOC_3" id="doc_3" value="yes" onchange="sdoc3()"></td>
+				    		
+				    			</tr>
+							<tr>
+				    				<td>DOCUMENT 4</td>
+				    				<td><input type="checkbox" name="DOC_4" id="doc_4" value="yes" onchange="sdoc4()"></td>
+				    		
+				    			</tr>
+							<tr>
+				    				<td>DOCUMENT 5</td>
+				    				<td><input type="checkbox" name="DOC_5" id="doc_5" value="yes" onchange="sdoc5()"></td>
+				    		
+				    			</tr>
+					    	 	</table>
+						</div>	
+					</div>
+					<div class="form-group" id="DOC1" style="display:none;">
+						<label class="col-sm-4 col-md-4 col-md-offset-2 col-sm-offset-2 control-label">UPLOAD DOCUMENT 1</label>
+						<div class="col-sm-4 col-md-4" >
+							<input type="file" name="UP_FILE_DOC1"></input>
+						</div>
+					</div>
+					<div class="form-group" id="DOC2" style="display:none;">
+						<label class="col-sm-4 col-md-4 col-md-offset-2 col-sm-offset-2 control-label">UPLOAD DOCUMENT 2</label>
+						<div class="col-sm-4 col-md-4" >
+							<input type="file" name="UP_FILE_DOC1"></input>
+						</div>
+					</div>
+					<div class="form-group" id="DOC3" style="display:none;">
+						<label class="col-sm-4 col-md-4 col-md-offset-2 col-sm-offset-2 control-label">UPLOAD DOCUMENT 3</label>
+						<div class="col-sm-4 col-md-4" >
+							<input type="file" name="UP_FILE_DOC3"></input>
+						</div>
+					</div>
+					<div class="form-group" id="DOC4" style="display:none;">
+						<label class="col-sm-4 col-md-4 col-md-offset-2 col-sm-offset-2 control-label">UPLOAD DOCUMENT 4</label>
+						<div class="col-sm-4 col-md-4" >
+							<input type="file" name="UP_FILE_DOC4"></input>
+						</div>
+					</div>
+					<div class="form-group" id="DOC5" style="display:none;">
+						<label class="col-sm-4 col-md-4 col-md-offset-2 col-sm-offset-2 control-label">UPLOAD DOCUMENT 5</label>
+						<div class="col-sm-4 col-md-4" >
+							<input type="file" name="UP_FILE_DOC5"></input>
+						</div>
+					</div>
+			
+					<div class="form-group">
+					    	<div class="col-sm-offset-5 col-md-offset-5 col-md-2 col-sm-2">
+					    		<input type="submit" value="Submit" id="submit" name="submit" class="btn btn-lg btn-primary">
+		  		  		</div>
+		  			</div>
+				</form>
+		</div>
+		<!-- /.Register -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!--/#upload-->
+
+  
+  <footer id="footer">
+    <div class="footer-top wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+      <div class="container text-center">
+        <div class="footer-logo">
+          <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""></a>
+        </div>
+        <div class="social-icons">
+          <ul>
+            <li><a class="envelope" href="#"><i class="fa fa-envelope"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li> 
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a class="tumblr" href="#"><i class="fa fa-tumblr-square"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>&copy; 2016 Fractal Analytics Inc.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/mousescroll.js"></script>
+  <script type="text/javascript" src="js/smoothscroll.js"></script>
+  <script type="text/javascript" src="js/jquery.countTo.js"></script>
+  <script type="text/javascript" src="js/lightbox.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
