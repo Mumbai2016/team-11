@@ -73,10 +73,6 @@ $result=$meeting->getmeetingswithpair($count);
 			echo "</div>";
 			echo "</div>";
 			
-
-
-
-			
 	    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
 	    {
 			
