@@ -1,18 +1,4 @@
-﻿<?php
-	
-
-
-	session_start();
-	
-	if (!(isset($_SESSION['username']) && $_SESSION['username'] != '')) {
-		
-		//header ("Location: login.php");
-	}
-
-	
-
-?>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <head>
 <title>
 Katalyst
@@ -20,11 +6,10 @@ Katalyst
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="mentor.css">
 </head>
 
 <body>
+
 <div class="row">
   <?php
   	if(isset($_GET))
@@ -32,7 +17,7 @@ Katalyst
 		  $count=$_GET['count'];
 	  } 
  
-include ('query.php');
+include ("query.php");
 $user=new User();
 $pair=new Pair();
 
@@ -51,18 +36,20 @@ $result=$pair->getpairswithcount($count);
 			echo "</div>";
 			
 	    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
-	    {				
+	    {
+			
+						
 			echo "<div class='panel panel-default'>";
 			echo "<div class='panel-body'>";
 			echo "<p>";
 			echo "<center>";
-			echo "<form action=PHPMailerAutoload.php?pid=".$row['P_Id']." method='GET'>";
-			echo "<a href='meetings.php?pid=".$row['P_Id'].">".$user->getMentee($row['Mentor'])."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$user->getMentee($row['Mentee'])."</a>&nbsp;&nbsp;&nbsp;<button type='submit' name='submit' class='btn btn-default' >Send Reminder</button>;";
-			echo "</form>";
+           echo "<form action=Checkforgot.php method='GET' style='z-index:100'>";
+          echo "<a href='meetings.php?pid=".$row['P_Id']."'>".$user->getMentee($row['Mentor'])."&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ".$user->getMentee($row['Mentee'])."</a><input type='hidden' name='pid' value='".$row['P_Id']."' ><button type='submit' name='submit'>Send Reminder</button></form>";
 			echo "</center>";
 			echo "</p>";
 			echo "</div>";
 			echo "</div>";
+
 	    }
 		echo "</div>";
 	    $result->close();	
@@ -76,15 +63,3 @@ $result=$pair->getpairswithcount($count);
 
 ?>
 </div>
-
-<p>
-				© Katalyst 2016. All Rights Reserved.<br>
-	
-			</p>
-</div>
-</body>
-
-
-</html>
-
- 
