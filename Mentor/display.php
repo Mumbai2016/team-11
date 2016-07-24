@@ -1,29 +1,18 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "katalyst11";
+include ('../query.php');
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-else
-{
-	
-}
-$sql="SELECT * from feedback ";//dummy
+	$meeting=new Meeting();
+	if(isset($_GET))
+	{
+		$result=$meeting->getmeetingdetails($_GET['mid']);
+	}
 
-
-	$result = $conn->query($sql);
 	
 	if ($result->num_rows > 0)
 	 {
-		echo "<div class='row'>"; 
+		echo "<div class='row'>"; 	
 	    // output data of each row
-	    while($row = $result->fetch_array())
+	    while($row    = mysqli_fetch_array($result, MYSQLI_ASSOC))
 	    {
 			$s1 = $row['summary'];
 			$s2 = $row['follow_up'];
@@ -59,7 +48,6 @@ $sql="SELECT * from feedback ";//dummy
 			
 	    }
 		echo "</div>";
-	    $result->close();	
 		  
 	 }
 	else
@@ -67,5 +55,4 @@ $sql="SELECT * from feedback ";//dummy
 		echo "NO RESULTS FOUND :("; 
 		echo "CHECK SOMETHING ELSE.. !";
 	}
-$conn->close();
 ?>

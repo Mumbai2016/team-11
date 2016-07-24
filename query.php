@@ -32,7 +32,7 @@ class User
         $row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row['Name'];
 	}
-	function getemail$U_Id)
+	function getemail($U_Id)
 	{
 		$connObj = new SqlConn();
         $conn= $connObj->sql_connection();
@@ -130,7 +130,7 @@ class Meeting
 	}
 	function getmeetingswithpair($pid)
 	{
-		$sql1="select * from meeting where P_Id='$pid'";
+		$sql1="select * from meeting where P_Id='$pid' and flag=1";
 		$connObj = new SqlConn();
         $conn= $connObj->sql_connection();
 		$result = mysqli_query($conn, $sql1);
@@ -139,7 +139,7 @@ class Meeting
 	}
 	function getmeetingdetails($mid)
 	{
-		$sql1="select * from meeting where P_Id='$pid'";
+		$sql1="select * from meeting m, feedback f where m.M_Id=f.M_Id";
 		$connObj = new SqlConn();
         $conn= $connObj->sql_connection();
 		$result = mysqli_query($conn, $sql1);
