@@ -105,6 +105,7 @@ class Pair
         $conn= $connObj->sql_connection();
 		$sql1="select * from pairs where P_Id=$pid";
 		$result = mysqli_query($conn, $sql1);
+		
 		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row;
 	}
