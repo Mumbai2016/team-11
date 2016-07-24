@@ -147,6 +147,16 @@ class Meeting
         
         return $result;
 	}
+	function getmeetingswithid($id)
+	{
+		$sql1="select * from meeting where Mentor='$id' or Mentee='$id";
+		$connObj = new SqlConn();
+        $conn= $connObj->sql_connection();
+		$result = mysqli_query($conn, $sql1);
+        
+        return $result;
+	}
+	
 }
 class Request
 {
