@@ -61,6 +61,19 @@ class User
 		return $row['U_Id'];
 	}
 	
+	
+	//Kaustav
+	function getUidfromEmail($email)
+	{
+		$connObj = new SqlConn();
+        $conn= $connObj->sql_connection();
+		$sql="select U_Id from user where email='$email'";
+		$result=mysqli_query($conn, $sql);
+		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		return $row['U_Id'];
+		
+	}
+	
 }
 class Pair
 {
