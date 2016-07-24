@@ -1,0 +1,230 @@
+p{
+	color:orangered;
+	font-family:Verdana;
+	text-align:center;
+	font-size:15px;
+}
+
+#header img{
+	height:109px;
+	width:110px;
+	float:left;
+}
+
+#header{
+	color:white;
+	background-color:#CC0000;
+	font-size:18;
+	font-family:sans serif;
+	text-align:center;
+	height:110px;
+	position :absolute;
+	padding-top:1px;
+	line-height:20px;
+	margin:0px 0px 0px 0px;
+	width:100%;
+}
+
+
+#header ul#enter {
+    float:none;
+    text-align:right;
+    padding-right:20px;
+}
+
+#header ul#enter li {
+    display: inline;
+    padding: 2px;
+}
+
+#header ul#enter li a {
+    background-color: #32c896;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px 4px 4px 4px;
+}
+
+#header ul#enter li a:hover {
+    background-color: #238b68;
+}
+
+#aside{
+width:13%;
+padding: 0px 0px 0px 0px;
+line-height:25px;
+float:left;
+
+margin:0px 0px 0px 0px;
+}
+
+.columnar{
+text-align:center;
+width:169px;
+height:87px;
+background-color: #32c896;
+
+}
+.columnar a {
+    background-color: #32c896;
+    color: white;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    line-height:40px;
+	text-decoration:none;
+}
+
+.columnar a:hover {
+    background-color: #337ab7;
+	text-decoration:none;
+	border-radius:4px 4px 4px 4px;
+}
+
+.carousel{
+width:87%;
+height:70%;
+float:right;
+margin:0px 0px 0px 0px;
+
+}
+
+
+
+#nav{
+margin:0px 0px 0px 0px;
+}
+
+#nav ul#menu {
+    padding: 16px;
+    float:none;
+    text-align:center;
+    margin:0;
+    background-color:#FFFFAC;
+}
+
+#nav ul#menu li {
+    display: inline;
+
+}
+
+#nav ul#menu li a {
+    background-color: #238b68;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 4px 4px 4px 4px;
+}
+
+#nav ul#menu li a:hover {
+    background-color: #32c896;
+}
+
+#end{
+	background-color:#FFFFAC;
+	clear:both;
+	margin-top:450px;
+	width:100%;
+	text-align:center;
+}
+
+#trial ul{
+        padding: 0;
+        list-style: none;
+        background: #FFFFCA;
+    }
+#trial ul li{
+        display: inline-block;
+        position: relative;
+        line-height: 21px;
+        text-align: left;
+    }
+#trial ul li a{
+        display: block;
+        padding: 8px 25px;
+        color: #333;
+        text-decoration: none;
+    }
+#trial ul li a:hover{
+        color: #fff;
+        background: #939393;
+    }
+#trial ul li ul.dropdown{
+        min-width: 120px; /* Set width of the dropdown */
+        background: #f2f2f2;
+        display: none;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+    }
+#trial ul li:hover ul.dropdown{
+        display: block;	/* Display the dropdown */
+    }
+#trial ul li ul.dropdown li{
+        display: block;
+    }
+
+
+
+#signin-card1{
+width: 350px;
+padding: 40px 40px;
+float:left;
+margin-top:10px;
+margin-left:150px;
+text-align:center;
+background-color: #f7f7f7;
+height:424px;
+}
+
+#signin-card2{
+width: 350px;
+padding: 40px 40px;
+float:left;
+margin-top:10px;
+margin-left:37%;
+text-align:center;
+background-color: #f7f7f7;
+height:480px;
+}
+
+
+#signin-card1 input{
+padding:7px 4px 7px 4px;
+border-radius:4px 4px 4px 4px;
+}
+
+#signin-card2 input{
+padding:7px 4px 7px 4px;
+border-radius:4px 4px 4px 4px;
+
+}
+#button
+{
+	width:50%;
+	background-color:#3030FF;
+	position:relative;
+	text-align:center;
+	color:white;
+}
+#signin-card2 input[type=password],[type=text],[type=email]{
+width:100%;
+position:relative;
+color:black;
+}
+
+
+
+#signin-card2 input[type=reset]{
+width:40%;
+background-color:#3030FF;
+position:relative;
+color:white;
+}
+
+#signin-card2 input[type=submit]{
+width:40%;
+background-color:#3030FF;
+position:relative;
+color:white
+}
+
