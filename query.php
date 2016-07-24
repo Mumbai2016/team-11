@@ -32,6 +32,15 @@ class User
         $row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row['Name'];
 	}
+	function getemail$U_Id)
+	{
+		$connObj = new SqlConn();
+        $conn= $connObj->sql_connection();
+		$sql="select email from user where U_Id='$U_Id'";
+		$result = mysqli_query($conn, $sql);
+        $row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		return $row['email'];
+	}
 	function getrequest($U_Id)
 	{
 		$connObj = new SqlConn();
@@ -41,6 +50,7 @@ class User
 		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row;
 	}
+	
 	function notMentors($Mentee)
 	{
 		$connObj = new SqlConn();
@@ -127,6 +137,15 @@ class Meeting
         
         return $result;
 	}
+	function getmeetingdetails($mid)
+	{
+		$sql1="select * from meeting where P_Id='$pid'";
+		$connObj = new SqlConn();
+        $conn= $connObj->sql_connection();
+		$result = mysqli_query($conn, $sql1);
+        
+        return $result;
+	}
 }
 class Request
 {
@@ -176,7 +195,7 @@ class Request
 }
 class Feedback
 {
-	function fb()
+	function pending_fb()
 	{
 		$connObj = new SqlConn();
         $conn= $connObj->sql_connection();
