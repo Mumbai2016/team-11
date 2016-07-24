@@ -1,0 +1,155 @@
+p{
+	color:orangered;
+	font-family:Verdana;
+	text-align:center;
+	font-size:15px;
+}
+
+#header img{
+	height:145px;
+	width:134px;
+	float:left;
+	margin-right:300px;
+}
+
+#header{
+color:white;
+background-color:#CC0000;
+font-size:18;
+text-align:left;
+font-family:sans serif;
+height:110px;
+padding-top:1px;
+line-height:20px;
+margin:0px 0px 0px 0px;
+}
+
+
+#header ul#enter {
+    float:none;
+    text-align:right;
+    padding-right:20px;
+}
+
+#header ul#enter li {
+    display: inline;
+    padding: 2px;
+}
+
+#header ul#enter li a {
+    background-color: #32c896;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 4px 4px 4px 4px;
+}
+
+#header ul#enter li a:hover {
+    background-color: #238b68;
+}
+
+
+#end{
+background-color:#FFFFAC;
+
+float:none;
+clear:both;
+margin:0px 0px 0px 0px;
+}
+
+#trial ul{
+        padding: 0;
+        list-style: none;
+        background: #FFFFCA;
+    }
+#trial ul li{
+        display: inline-block;
+        position: relative;
+        line-height: 21px;
+        text-align: left;
+    }
+#trial ul li.activate{
+		background-color: #32c896;
+}
+
+#trial ul li a{
+        display: block;
+        padding: 8px 25px;
+        color: #CC0000;
+        text-decoration: none;
+    }
+#trial ul li a:hover{
+        color: #fff;
+        background: #238b68;
+    }
+#trial ul li ul.dropdown{
+        min-width: 120px; /* Set width of the dropdown */
+        background: #f2f2f2;
+        display: none;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+    }
+#trial ul li:hover ul.dropdown{
+        display: block;	/* Display the dropdown */
+    }
+#trial ul li ul.dropdown li{
+        display: block;
+    }
+
+.row{
+margin:20px 5px 5px 5px;
+}
+
+
+#horiz ul{
+        padding: 0px 10px 0px 50px;
+        list-style: none;
+        background: #FFFFCA;
+    }
+#horiz ul li{
+        display: inline-block;
+        position: relative;
+        line-height: 21px;
+        text-align: left;
+	padding-left:10px;
+	padding-right:10px;
+    }
+
+#horiz ul li select{
+	border-color:#238b68;
+	background-color:gray;
+	 padding: 10px 10px 10px 10px;
+}
+
+#horiz ul li select option{
+	background-color:white;
+}
+
+#horiz ul li input type[=submit]{
+	border-radius:50%;
+	border:1px solid black;
+	height:40px;
+	width:40px;
+}
+
+#horiz ul li input type[=text]{
+	
+	border:1px solid black;
+	height:40px;
+	width:40px;
+}
+
+.row img{
+ opacity: 1.0;
+height:450px;
+width:656px;
+padding:10px 10px 3px 10px;
+}
+
+.row img:hover{
+opacity: 0.4;
+height:450px;
+width:656px;
+padding:10px 10px 3px 10px;
+}
