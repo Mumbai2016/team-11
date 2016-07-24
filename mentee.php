@@ -31,7 +31,7 @@ a.hover{
   <li><a href="#row2">Request a Meeting</a></li>
   <li><a href="#row3">Pending Feedbacks</a></li>
   <li><a href="#row4">My Requests</a></li>
-  <li><a href="https://ie.talkgadget.google.com/hangouts/_/7wrirnw2ozhjfag2gswfp6rvdae?authuser=0&hl=en-GB">Hangout</a></li>
+  <li>x<a href="https://ie.talkgadget.google.com/hangouts/_/7wrirnw2ozhjfag2gswfp6rvdae?authuser=0&hl=en-GB">Hangout</a></li>
 </ul>
 </div>
 
