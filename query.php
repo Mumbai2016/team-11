@@ -167,8 +167,8 @@ class Request
         $conn= $connObj->sql_connection();
 		$sql1="select pairs.Mentee,R.location,R.date,R.time from (select * from pairs where Mentor='$M_Id')as pairs join (select * from request where status=0) as R on R.P_Id=pairs.P_Id";
 		$result = mysqli_query($conn, $sql1);
-        $row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        return $row;
+   
+        return $result;
 	}
 	function reject($R_ID)
 	{

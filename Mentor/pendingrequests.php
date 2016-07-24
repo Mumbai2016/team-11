@@ -24,23 +24,6 @@ Katalyst
 
 <body>
 
-<div id="header">
-		<img src="food_icon.jpg" alt="Error">
-		<h1>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-		KATALYST</h1>
-		<ul id="enter">
-			<li><a href="logout.php">Logout</a></li>
-		</ul>
-	</div>
-
-<div id="trial">
-<ul>
-  <li><a href="mentor.php">Upcoming Meetings</a></li>
-  <li><a href="pendingrequests.php">Pending Requests</a></li>
-  <li><a href="meetingsnapshots.php">Meeting Snapshots</a></li>
-</ul>
-</div>
-
 
 
 
@@ -48,7 +31,60 @@ Katalyst
 
 
 <div class="row">
-  <?php include 'panel.php' ?>
+
+<table>
+<tr>
+<th> Date </th>
+<th> Time </th>
+<th> Location </th>
+<th> Decision </th>
+</tr>
+  <?php
+  include ('../query.php');
+ 
+
+  if(isset($_SESSION))
+  {
+	  $mid=$_SESION['eid'];
+  }
+   $req=new Request();
+   $result=$req->fetchpending($mid);
+
+	if ($result->num_rows > 0)
+	 {
+		echo "<div class='row'>"; 
+	    // output data of each row
+	    while($row    = mysqli_fetch_array($result, MYSQLI_ASSOC))
+	    {
+			
+			$s = $row['Mentor'];
+						
+			
+		
+			
+			echo "<tr><td>".$row['date']."</td><td>".$row['time']."</td><td>".$row['location']."</td><td > <input type='submit'  value='Accept' /> / <input type='submit' class='styled-button-10' value='Reject' /> </th></tr>";
+			
+			
+			
+	    }
+		echo "</div>";
+	    $result->close();	
+		  
+	 }
+	else
+	{
+		echo "NO RESULTS FOUND :("; 
+		echo "CHECK SOMETHING ELSE.. !";
+	}
+
+?>
+
+
+
+</table>
+
+
+
 </div>
 
 
