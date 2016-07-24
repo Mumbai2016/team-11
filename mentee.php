@@ -43,7 +43,20 @@ $conn->close();
 ?>
 </div>
 
-<div div="row2">
+<div id="row2" class="row">
+			<img src="give.jpg" alt="Error"><br><br>
+			<form  method="post" onsubmit="return loginvalidation();" action="connectivity.php" name="login">
+				<input type="text" name="username" placeholder="Username"><br><br>
+				<input type="password" name="password" placeholder="Password"><br><br>
+				<input type="submit" name="submit" value="Login"><br><br>
+				<p>Not a member and want to join?</p>
+				<a href="signUp.php">
+					<input id="button" value="Sign Up!" >
+				</a>
+			</form>
+</div>
+
+
   <?php
   include("query.php");
   $connObj= new SqlConn();
