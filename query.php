@@ -3,7 +3,7 @@ class SqlConn
 {
     function sql_connection()
     {
-        //pratik
+            
         $serverName = "localhost";
         $userName   = "root";
         $password   = " ";
@@ -59,10 +59,22 @@ class Pair
 	{
 		$connObj = new SqlConn();
         $conn= $connObj->sql_connection();
-		$sql1="select P_Id from pairs where Mentor='$Mentor' and Mentee='$Mentee'";
+		$sql1="select P_Id from pair where Mentor='$Mentor' and Mentee='$Mentee'";
 		$result = mysqli_query($conn, $sql);
 		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row['P_Id'];
+	}
+	function getcount($count)
+	{
+		$connObj = new SqlConn();
+        $conn= $connObj->sql_connection();
+		if($count<3)
+			$sql="select count(*) `count` from pairs where m_count='$count'";
+		else
+			$sql="select count(*) `count` from pairs where m_count>2";
+		$result = mysqli_query($conn, $sql);
+		$row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
+		return $row['count'];
 	}
 }
 class Meeting
@@ -100,7 +112,7 @@ class Request
 	{
 		$connObj = new SqlConn();
         $conn= $connObj->sql_connection();
-		$sql1="select pairs.Mentee,R.location,R.date,R.time from (select * from pairs where Mentor='$M_Id')as pairs join (select * from requests where status=0) as R on R.P_Id=pairs.P_Id";
+		$sql1="select pairs.Mentee,R.location,R.date,R.time from (select * from pairs where Mentor='$M_Id')as pairs join (select * from request where status=0) as R on R.P_Id=pairs.P_Id";
 		$result = mysqli_query($conn, $sql1);
         $row    = mysqli_fetch_array($result, MYSQLI_ASSOC);
         return $row;
@@ -135,7 +147,7 @@ class Feedback
 	{
 		$connObj = new SqlConn();
         $conn= $connObj->sql_connection();
-		$sql1="select meeting.Date from meeting where meeting.flag=1 and meeting.M_Id NOT IN (select M_Id from Feedback)";	
+		$sql1="select meeting.date from meeting inner join feedback on meeting.M_Id=feedback.M_Id where meeting.flag=1 and meeting.M_Id NOT IN (select M_Id from Feedback)";	
 		$result= mysqli_query($conn, $sql1);
 		$row   = mysqli_fetch_array($result, MYSQLI_ASSOC);
 		return $row['date'];
