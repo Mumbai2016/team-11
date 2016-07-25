@@ -1009,7 +1009,7 @@
 			//set the position and add class .animate
 			ink.css({top: y+'px', left: x+'px'}).addClass("animate");
 			
-			$('.view-month').prepend("<div class='view-day'><div class='title active transition'><div onclick='gobackDay();' class='go-back-day transition'><span></span></div>" + "<span class='day-name'>" + day + "</span> " + "<span class='month-name small'>" + month + "</span>" + " <span class='date-year'>2015</span></div><div class='grid'><p class='centred'><h4>Mentor Name :  <br><br> Mentee Name :  <br><br> Location : Mumbai <br><br> Goals : Understand the importance of reading</h4></p></div></div>");
+			$('.view-month').prepend("<div class='view-day'><div class='title active transition'><div onclick='gobackDay();' class='go-back-day transition'><span></span></div>" + "<span class='day-name'>" + day + "</span> " + "<span class='month-name small'>" + month + "</span>" + " <span class='date-year'>2015</span></div><div class='grid'><p class='centred'><h4>Mentor Name : JP Morgan <br><br> Mentee Name : Chase <br><br> Location : Mumbai <br><br> Goals : Understand the importance of reading</h4></p></div></div>");
 			
 			$('.view-day').delay(500).fadeIn();
 			setTimeout(function(){
